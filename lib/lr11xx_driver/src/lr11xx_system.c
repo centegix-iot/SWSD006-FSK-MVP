@@ -627,7 +627,10 @@ lr11xx_status_t lr11xx_system_enable_spi_crc( const void* context, bool enable_c
 
 lr11xx_status_t lr11xx_system_drive_dio_in_sleep_mode( const void* context, bool enable_drive )
 {
-    const uint8_t cbuffer[LR11XX_SYSTEM_DRIVE_DIO_IN_SLEEP_MODE_CMD_LENGTH] = {
+	// KOZAK MOD: doesn't work on our FW version
+    return LR11XX_STATUS_OK;
+	
+	const uint8_t cbuffer[LR11XX_SYSTEM_DRIVE_DIO_IN_SLEEP_MODE_CMD_LENGTH] = {
         ( uint8_t ) ( LR11XX_SYSTEM_DRIVE_DIO_IN_SLEEP_MODE_OC >> 8 ),
         ( uint8_t ) ( LR11XX_SYSTEM_DRIVE_DIO_IN_SLEEP_MODE_OC >> 0 ),
         ( enable_drive == true ) ? 0x01 : 0x00,
