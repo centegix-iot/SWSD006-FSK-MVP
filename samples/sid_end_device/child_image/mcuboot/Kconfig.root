@@ -36,7 +36,7 @@ config FPROTECT
     default y
 
 config NORDIC_QSPI_NOR
-    default y
+    default n
 
 config NORDIC_QSPI_NOR_FLASH_LAYOUT_PAGE_SIZE
     default 4096
