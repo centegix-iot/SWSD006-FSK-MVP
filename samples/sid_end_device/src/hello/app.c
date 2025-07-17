@@ -227,10 +227,6 @@ static void app_button_handler(uint32_t event)
 static int app_buttons_init(void)
 {
 	button_set_action_short_press(DK_BTN1, app_button_handler, SID_EVENT_SEND_MSG);
-	button_set_action_long_press(DK_BTN1, app_button_handler, SID_EVENT_NORDIC_DFU);
-	button_set_action_short_press(DK_BTN2, app_button_handler, SID_EVENT_CONNECT);
-	button_set_action_long_press(DK_BTN2, app_button_handler, SID_EVENT_FACTORY_RESET);
-	button_set_action(DK_BTN3, app_button_handler, SID_EVENT_LINK_SWITCH);
 
 	return buttons_init();
 }
