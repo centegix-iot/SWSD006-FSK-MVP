@@ -59,6 +59,8 @@ extern "C" {
 #define LORA_BASICS_MODEM_FW_VERSION_MINOR 3
 #define LORA_BASICS_MODEM_FW_VERSION_PATCH 1
 
+// Test comment to check submodule
+
 /*
  * -----------------------------------------------------------------------------
  * --- PUBLIC FUNCTIONS PROTOTYPES ---------------------------------------------
