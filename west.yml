@@ -3,14 +3,14 @@
 
 manifest:
   self:
-    path: SWSD006
+    path: SWSD006-FSK-MVP
     west-commands: scripts/west-commands.yml
 
   remotes:
     - name: ncs
       url-base: https://github.com/nrfconnect
-    - name: lora-net
-      url-base: https://github.com/Lora-net
+    - name: centegix-iot
+      url-base: https://https://github.com/centegix-iot/
 
   projects:
     - name: nrf
@@ -19,14 +19,14 @@ manifest:
       revision: v2.6.1
       import: true
     - name: sidewalk
-      remote: ncs
-      repo-path: sdk-sidewalk
+      remote: centegix-iot
+      repo-path: sidewalk
       revision: v2.6.1
-    - name: lbm431
-      remote: lora-net
-      repo-path: SWSD006
-      revision: lbm_v431
-    - name: lbm450
-      remote: lora-net
-      repo-path: SWSD006
-      revision: lbm_v450
+    # - name: lbm431
+    #   remote: lora-net
+    #   repo-path: SWSD006-FSK-MVP
+    #   revision: lbm_v431
+    # - name: lbm450
+    #   remote: lora-net
+    #   repo-path: SWSD006-FSK-MVP
+    #   revision: lbm_v450
