@@ -129,12 +129,12 @@ static radio_lr11xx_device_config_t radio_lr11xx_cfg =
 	.pa_cfg_callback = radio_lr11xx_pa_cfg,
 
 	.wakeup_delay_us = 0,
-	.lfclock_cfg = LR11XX_SYSTEM_LFCLK_XTAL,
+	.lfclock_cfg = LR11XX_SYSTEM_LFCLK_RC,
 #if defined(CONFIG_RADIO_TCXO)
 	.tcxo_config = {
 		.ctrl = LR11XX_TCXO_CTRL_DIO3,
-		.tune = LR11XX_SYSTEM_TCXO_CTRL_3_3V,
-		.timeout = 10 // 20 //200
+		.tune = LR11XX_SYSTEM_TCXO_CTRL_3_0V,
+		.timeout = 164 // 20 //200
 	},
 #else
 	.tcxo_config = {
@@ -143,15 +143,19 @@ static radio_lr11xx_device_config_t radio_lr11xx_cfg =
 #endif
 
 	.rfswitch = {
-		.enable = LR11XX_SYSTEM_RFSW0_HIGH | LR11XX_SYSTEM_RFSW1_HIGH | LR11XX_SYSTEM_RFSW2_HIGH,
+		.enable = LR11XX_SYSTEM_RFSW0_HIGH | LR11XX_SYSTEM_RFSW3_HIGH,
 		.standby = 0,
-		.rx = LR11XX_SYSTEM_RFSW0_HIGH,
-		.tx = LR11XX_SYSTEM_RFSW0_HIGH | LR11XX_SYSTEM_RFSW1_HIGH,
-		.tx_hp = LR11XX_SYSTEM_RFSW1_HIGH,
+		.rx = LR11XX_SYSTEM_RFSW3_HIGH,
+		.tx = LR11XX_SYSTEM_RFSW3_HIGH | LR11XX_SYSTEM_RFSW0_HIGH,
+		.tx_hp = LR11XX_SYSTEM_RFSW3_HIGH | LR11XX_SYSTEM_RFSW0_HIGH,
 		.tx_hf = 0,
-		.gnss = LR11XX_SYSTEM_RFSW2_HIGH,
+		.gnss = 0,
 		.wifi = 0,
 	},
+	
+	.gpios = {
+        .txrx = 128
+    },
 
 	.rssi_no_signal_offset = 0,
 
