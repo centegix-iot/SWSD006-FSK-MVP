@@ -10,7 +10,7 @@ manifest:
     - name: ncs
       url-base: https://github.com/nrfconnect
     - name: centegix-iot
-      url-base: https://https://github.com/centegix-iot/
+      url-base: https://github.com/centegix-iot/
 
   projects:
     - name: nrf
@@ -20,7 +20,7 @@ manifest:
       import: true
     - name: sidewalk
       remote: centegix-iot
-      repo-path: sidewalk
+      repo-path: sdk-sidewalk-fsk-mvp
       revision: v2.6.1
     # - name: lbm431
     #   remote: lora-net
