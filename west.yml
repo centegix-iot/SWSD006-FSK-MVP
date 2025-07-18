@@ -21,7 +21,8 @@ manifest:
     - name: sidewalk
       remote: centegix-iot
       repo-path: sdk-sidewalk-fsk-mvp
-      revision: v2.6.1
+      revision: v2.6-branch
+      path: sidewalk
     # - name: lbm431
     #   remote: lora-net
     #   repo-path: SWSD006-FSK-MVP
